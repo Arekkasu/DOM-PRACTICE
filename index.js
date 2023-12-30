@@ -2,6 +2,8 @@ import hamburgerMenu from "./doms/hamburguer.js";
 
 import { digitalClock, alarm } from "./doms/watch.js";
 
+import { moveBall, shortcuts } from "./doms/teclado.js";
+
 const d = document;
 
 
@@ -32,4 +34,24 @@ d.addEventListener("DOMContentLoaded", (e) => {
   alarm("assets/alarm.mp3", "#activar-alarma", "#desactivar-alarma")
 
 })
+
+// PARTE DE LOS EVENTOS addEventListener
+
+//kewydown es cuando uno presiona la tecla
+
+//keyup es cuando uno suelta la tecla despues de presiona
+
+//keypress detecta las veces que se mantiene presionado la tecla
+
+//
+
+d.addEventListener("keydown", e => {
+
+
+  shortcuts(e)
+  moveBall(e, ".ball", ".stage")
+
+})
+
+
 
