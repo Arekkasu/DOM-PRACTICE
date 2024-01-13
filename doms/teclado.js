@@ -18,10 +18,6 @@ export function moveBall(e, ball, stage){
     limitsBall = $ball.getBoundingClientRect(),
     limitsStage = $stage.getBoundingClientRect();  
 
-  
-  console.log(e)
-  console.log(limitsBall, limitsStage)
-
   // RECORDAR QUE EN LA WEB ARRIBA ES NEGATIVO Y ABAJO ES POSITIVO
 
   switch(e.keyCode){
