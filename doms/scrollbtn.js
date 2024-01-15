@@ -28,7 +28,7 @@ export default function scrollTopButton(btn){
     }
 
     //el w.pageYOffset esta deprecado y se usa mejor scrollY
-    console.log(w.scrollY, d.documentElement.scrollTop)
+    //console.log(w.scrollY, d.documentElement.scrollTop)
 
   });
   d.addEventListener("click", e => {

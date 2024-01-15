@@ -46,11 +46,13 @@ d.addEventListener("DOMContentLoaded", (e) => {
     "Se cumplio esa vuelta mijo"
   )
 
+  
   scrollTopButton(".scroll-top-btn")
- 
 
-  darkTheme(".dark-theme-btn", "dark-mode")
+
 })
+
+//Windwo load espera que cargo todos los estilos y scripts
 
 // PARTE DE LOS EVENTOS addEventListener
 
@@ -70,5 +72,6 @@ d.addEventListener("keydown", e => {
 
 })
 
+// Se saca la funcon ya que no puede haber mas de un evento igual
 
-
+darkTheme(".dark-theme-btn", "dark-mode")
