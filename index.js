@@ -8,6 +8,8 @@ import { moveBall, shortcuts } from "./doms/teclado.js";
 import cowntdown from "./doms/cowntdown.js";
 import scrollTopButton from "./doms/scrollbtn.js";
 import darkTheme from "./doms/Dark&Light.js";
+import responsiveMedia from "./doms/object_responsive.js";
+import responsiveTester from "./doms/test-responsive.js";
 
 
 const d = document;
@@ -46,10 +48,25 @@ d.addEventListener("DOMContentLoaded", (e) => {
     "Se cumplio esa vuelta mijo"
   )
 
-  
   scrollTopButton(".scroll-top-btn")
+  
+  responsiveMedia(
+    "youtube", 
+    "(min-width: 1024px)", 
+    `<a href="https://www.youtube.com/watch?v=6IwUl-4pAzc&list=PLvq-jIkSeTUZ6QgYYO3MwG9EMqC-KoLXA">Ver Video</a>`, 
+    `<h3>Mi Ambiente de escritorio linux</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jM95mwLvaq4?si=9f9IBvaeBzIo9Q-L" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`)
+
+  responsiveMedia(
+    "gmaps", 
+    "(min-width: 1024px)", 
+    `<a href="https://maps.app.goo.gl/NqUHR9udRrzRYMSC6">Ver Mapa<a>`, 
+    `<h1>Monte Fuji Google Maps</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13015.197494929274!2d138.72736339999997!3d35.36062499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6019629a42fdc899%3A0xa6a1fcc916f3a4df!2sMonte%20Fuji!5e0!3m2!1ses!2sco!4v1705437098776!5m2!1ses!2sco" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`)
 
 
+
+  responsiveTester("responsive-tester")
 })
 
 //Windwo load espera que cargo todos los estilos y scripts
