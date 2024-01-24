@@ -10,6 +10,7 @@ import scrollTopButton from "./doms/scrollbtn.js";
 import darkTheme from "./doms/Dark&Light.js";
 import responsiveMedia from "./doms/object_responsive.js";
 import responsiveTester from "./doms/test-responsive.js";
+import userDeviceInfo from "./doms/device-detector.js";
 
 
 const d = document;
@@ -67,6 +68,7 @@ d.addEventListener("DOMContentLoaded", (e) => {
 
 
   responsiveTester("responsive-tester")
+  userDeviceInfo("user-device")
 })
 
 //Windwo load espera que cargo todos los estilos y scripts
