@@ -38,12 +38,12 @@ export default function userDeviceInfo(id){
     chrome: () => ua.match(/chrome/i),
     safari: () => ua.match(/safari/i),
     firefox: () => ua.match(/firefox/i),
-    opera: () => ua.match(/opera/i),
+    opera: () => ua.match(/opr|opx/i),
     ie: () => ua.match(/msie|iemobile/i),
     edge: () => ua.match(/edg|edge/i),
     any: function () {
 
-      return this.chrome() || this.safari() || this.firefox() || this.opera() || this.edge() || this.ie()
+      return this.edge() || this.opera() || this.firefox() || this.safari() || this.chrome() || this.ie()
 
     }
 
@@ -65,7 +65,21 @@ export default function userDeviceInfo(id){
   </ul>
   `
 
-  if(isBrowser.chrome()){
+
+  if (isBrowser.opera()){
+
+    $id.innerHTML += `<h5>Este GIF solo lo ven los que usen OPERA u Opera Gx</h5>
+ <img src="https://media1.giphy.com/media/9u55DVig5R6bw3Nqna/giphy.gif?cid=ecf05e470ucpa4nhqrvyguaqolq2zuxqta7gt01jnazamme6&ep=v1_gifs_search&rid=giphy.gif&ct=g">    
+
+`
+  } 
+
+  else if(isBrowser.edge()){
+  $id.innerHTML +=`<h5>Este GIF solo lo ven los que este usando edge</h5>
+<img src="https://media3.giphy.com/media/l41YcLtmnhYyUlbfq/giphy.gif?cid=ecf05e47a1f5bzd310tpvvvvu7aa1n6lx0ohc01y2tn8ixyv&ep=v1_gifs_search&rid=giphy.gif&ct=g">
+`
+}
+  else if(isBrowser.chrome()){
       
     $id.innerHTML += `<h5>Este GiF solo lo ven los que usan chrome</h5>
     <img src="https://media0.giphy.com/media/3oGRFEkn8TPenUvzAk/200w.webp?cid=ecf05e47dpugncqlgnmsnoncl2l0d0kt30x5jsvmtr8b5mx8&ep=v1_gifs_search&rid=200w.webp&ct=g"/>`
@@ -78,36 +92,22 @@ export default function userDeviceInfo(id){
     `
   }
     
-  else if(isBrowser.opera()){
-
-
-    $id.innerHTML += `<h5>Este GiF solo lo ven los que usan Opera</h5>
-    <img src=""/>`
-  }
   else if(isBrowser.safari()){
 
     $id.innerHTML += `<h5>Este GiF solo lo ven los que usan safari</h5>
     <img src="https://media1.giphy.com/media/QNMc1qv4VX8IdTLGOm/giphy.gif?cid=ecf05e47y58ca3ibv3ot12q0dt5viulwwxa66y8tywj1ywfy&ep=v1_gifs_search&rid=giphy.gif&ct=g"/>`
   }
-  else if(isBrowser.edge()){
-  $id.innerHTML +=`<h5>Este GIF solo lo ven los que este usando edge</h5>
-img<https://media3.giphy.com/media/l41YcLtmnhYyUlbfq/giphy.gif?cid=ecf05e47a1f5bzd310tpvvvvu7aa1n6lx0ohc01y2tn8ixyv&ep=v1_gifs_search&rid=giphy.gif&ct=g>
-`
-  }
+
   /* Redirecciones */
 
   if (isMobile.android() || isMobile.ios() || isMobile.windows()){
-
     const input = confirm("Se detecto que estas en dispositivo movil, deseas continuar a la pagina version movil?")
     if(input){
       w.location.href = "https://www.youtube.com/watch?v=xvFZjo5PgG0"
+  
     }
+  
   }
 
-
-
-
-
-
-
+//end
 }
