@@ -1,4 +1,4 @@
-const d = document;
+loconst d = document;
 const n = navigator;
 const w = window;
 
@@ -43,7 +43,7 @@ export default function userDeviceInfo(id){
     edge: () => ua.match(/edg|edge/i),
     any: function () {
 
-      return this.edge() || this.opera() || this.firefox() || this.safari() || this.chrome() || this.ie()
+      return this.edge() || this.opera() || this.firefox() || this.chrome() || this.safari() || this.ie()
 
     }
 
