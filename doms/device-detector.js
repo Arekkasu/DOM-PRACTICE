@@ -1,4 +1,4 @@
-loconst d = document;
+const d = document;
 const n = navigator;
 const w = window;
 
