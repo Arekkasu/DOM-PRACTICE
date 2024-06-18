@@ -11,6 +11,16 @@ import darkTheme from "./doms/Dark&Light.js";
 import responsiveMedia from "./doms/object_responsive.js";
 import responsiveTester from "./doms/test-responsive.js";
 import userDeviceInfo from "./doms/device-detector.js";
+import networkStatus from "./doms/deteccion_red.js";
+import webCam from "./doms/detecction_webcam.js";
+import getGeolocation from "./doms/geolocalizacion.js";
+import searchFilter from "./doms/busqueda.js";
+import draw from "./doms/sorteo.js";
+import slider from "./doms/slider_responsive.js";
+import scrollSpy from "./doms/scroll_spy.js";
+import smartVideo from "./doms/video_inteligente.js";
+import contactFormValidation from "./doms/validaciones_formulario.js";
+import narrador from "./doms/narrador.js";
 
 
 const d = document;
@@ -68,7 +78,24 @@ d.addEventListener("DOMContentLoaded", (e) => {
 
 
   responsiveTester("responsive-tester")
-  userDeviceInfo("user-device")
+  userDeviceInfo("user-device");
+
+  webCam("webcam")
+
+  getGeolocation("geolocation")
+  
+
+  searchFilter(".card-filter", ".card")
+
+  draw("#winner-btn", ".player")
+
+  slider()
+
+  scrollSpy()
+
+  smartVideo()
+
+  contactFormValidation()
 })
 
 //Windwo load espera que cargo todos los estilos y scripts
@@ -94,3 +121,10 @@ d.addEventListener("keydown", e => {
 // Se saca la funcon ya que no puede haber mas de un evento igual
 
 darkTheme(".dark-theme-btn", "dark-mode")
+
+
+networkStatus()
+
+//NOTE: RECORDAR QUE CUNADO YA TIENEN DOM CONTEN LOAD NO SE DEBE PONER
+//DENTRO DE UN DOM CONTENT LOAD.
+narrador()
